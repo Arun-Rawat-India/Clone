@@ -1,0 +1,79 @@
+@import 'color';
+@import 'shortcut';
+
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: $main;
+}
+
+header {
+    background-color: transparent;
+    width: 100%;
+    @include flex(center,center);
+
+    .container {
+        @include flex(center, space-between);
+        width: 90%;
+        max-width: 1242px;
+        padding: 1rem 0rem;
+
+        .left_con {
+            display: flex;
+
+            .logo-div {
+                @include flex(center, center);
+                margin-right: 0.8rem;
+                img {
+                    width: 100px;
+                    height: 25px;
+                    cursor: pointer;
+                }
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                padding-left: 0;
+
+                .nav_links {
+                    margin: 0px 0.8rem;
+
+                    a {
+                        text-decoration: none;
+                        color: $font2;
+                        text-transform: capitalize;
+
+                        &:hover {
+                            color: $font;
+                        }
+                    }
+
+                    a.active {
+                        color: $font;
+                    }
+                    
+                }
+                
+            }
+        }
+
+        .right_con {
+            @include flex(center, center);
+            color: $font;
+
+            img, i {
+                width: 35px;
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .container .left_con nav {
+        display: none;
+    }
+}
